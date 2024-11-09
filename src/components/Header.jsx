@@ -27,13 +27,13 @@ export default function Header() {
 
   return (
     <header
-      className={`w-full sticky top-0 z-[200] bg-white text-black transition-transform duration-300 ${
+      className={`w-full sticky top-0 z-[200] bg-lime-900 text-black transition-transform duration-300 justify-center ${
         hideHeader ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <div className="flex items-center space-x-2 px-4">
+      <div className="flex items-center justify-center space-x-2 px-4">
         <img className="inline-block w-auto h-[2.5rem] md:h-[3rem]" src = '/pngegg.png' alt = 'SimpliHealth Logo'/> 
-        <h1>SimpliHealth</h1>
+        <h1 className="text-white">SimpliHealth</h1>
       </div>
     </header>
   );

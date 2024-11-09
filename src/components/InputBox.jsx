@@ -29,10 +29,10 @@ export default function InputBox({ onSendMessage }) {
                 id="stringInput"
                 value={inputValue}
                 onChange={handleInputChange}
-                className="flex-1 mt-1"
+                className="flex-1 mt-1 placeholder:text-lime-900 text-lime-900"
                 placeholder="Type something..."
             />
-            <Button type="submit" className="bg-gray-900 w-auto rounded-xl">
+            <Button type="submit" className="bg-lime-900 w-auto rounded-xl">
                 Submit
             </Button>
             </div>
