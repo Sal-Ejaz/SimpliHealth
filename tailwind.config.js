@@ -51,6 +51,9 @@ module.exports = {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
+		fontFamily: {
+			montserrat: ['"Montserrat"', '"sans-serif"'],
+		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
