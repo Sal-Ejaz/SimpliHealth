@@ -152,8 +152,8 @@ export default function ChatDisplay() {
   }
 
   return (
-    <div className="flex flex-col h-screen bg-amber-100">
-      {messages.length > 0 && <Header />}
+<div className="flex flex-col h-screen bg-gradient-cosmic text-white">
+{messages.length > 0 && <Header />}
     
       <ScrollArea className="flex-grow p-4 overflow-auto" ref={scrollAreaRef}>
         {messages.length === 0 ? (
