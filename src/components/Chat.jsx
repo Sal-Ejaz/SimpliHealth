@@ -17,7 +17,6 @@ function useTypingEffect(text, speed = 50, startTyping = true) {
     setDisplayedText('');
     setIsTypingComplete(false);
 
-    // Avoid typing effect until typing has started
     if (!startTyping) return;
 
     const typingInterval = setInterval(() => {
@@ -25,11 +24,8 @@ function useTypingEffect(text, speed = 50, startTyping = true) {
         setDisplayedText(prev => prev + text.charAt(i));
         i++;
       } else {
-        // Ensure the last letter is added before finishing
-        setTimeout(() => {
-          clearInterval(typingInterval);
-          setIsTypingComplete(true);
-        }, speed);
+        clearInterval(typingInterval);
+        setIsTypingComplete(true);
       }
     }, speed);
 
@@ -56,7 +52,7 @@ Symptoms: ${data.extractedData.symptoms.length > 0 ? data.extractedData.symptoms
   const { displayedText: healthAdvice, isTypingComplete: adviceComplete } = useTypingEffect(
     data.healthAdvice,
     30,
-    extractedComplete // Only start healthAdvice typing after extractedInfo is complete
+    extractedComplete
   );
 
   const { displayedText: trials, isTypingComplete: trialsComplete } = useTypingEffect(
@@ -64,11 +60,11 @@ Symptoms: ${data.extractedData.symptoms.length > 0 ? data.extractedData.symptoms
       ? data.clinicalTrials.map(trial => `- ${trial.protocolSection.identificationModule.briefTitle}`).join('\n')
       : 'No relevant clinical trials found.',
     20,
-    adviceComplete // Only start trials typing after healthAdvice is complete
+    adviceComplete
   );
 
   return (
-    <Card className="w-full bg-lime-900 text-white">
+    <Card className="w-full bg-card text-card-foreground">
       <CardHeader>
         <CardTitle>Health Information</CardTitle>
       </CardHeader>
@@ -152,37 +148,37 @@ export default function ChatDisplay() {
   }
 
   return (
-<div className="flex flex-col h-screen bg-gradient-cosmic text-white">
-{messages.length > 0 && <Header />}
+    <div className="flex flex-col h-screen bg-gradient-cosmic text-white">
+      {messages.length > 0 && <Header />}
     
       <ScrollArea className="flex-grow p-4 overflow-auto" ref={scrollAreaRef}>
         {messages.length === 0 ? (
           <div className="flex flex-col justify-center items-center h-full">
-          <img
+            <img
               className="w-64 h-64 p-4"
               src='/pngegg.png'
               alt="Image"
             />
-            <h2 className="text-lime-900 text-2xl mb-4">What's going on?</h2>
+            <h2 className="text-primary-foreground text-2xl mb-4">What's going on?</h2>
     
             <form onSubmit={handleSubmit} className="w-full max-w-lg flex space-x-2">
               <Input
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
-                className="flex-1 placeholder:text-lime-900 text-lime-900"
+                className="flex-1 placeholder:text-primary-foreground text-primary-foreground"
                 placeholder="Describe your health issue or ask a question..."
                 disabled={isLoading}
               />
               <Button
                 type="submit"
-                className="bg-lime-900 hover:bg-lime-950 w-auto rounded-xl"
+                className="bg-primary hover:bg-primary/90 w-auto rounded-xl"
                 disabled={isLoading}
               >
                 {isLoading ? 'Processing...' : 'Submit'}
               </Button>
             </form>
-            <h1 className="text-lime-900 text-sm text-center mb-6 pt-4">
+            <h1 className="text-primary-foreground text-sm text-center mb-6 pt-4">
               Describe your age, location, any pre-existing conditions, and current symptoms. <br />
               For example: "I'm 43 at Congo. I have diabetes, and my stomach hurts. I'm also vomiting blood."
             </h1>
@@ -200,7 +196,7 @@ export default function ChatDisplay() {
               >
                 <div
                   className={`mx-2 p-3 rounded-xl ${
-                    message.type === 'user' ? 'bg-lime-900' : 'bg-gray-900'
+                    message.type === 'user' ? 'bg-primary' : 'bg-gray-900'
                   } text-white`}
                 >
                   {typeof message.content === 'string' ? (
@@ -222,13 +218,13 @@ export default function ChatDisplay() {
               type="text"
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              className="flex-1 mt-1 placeholder:text-lime-900 text-lime-900"
+              className="flex-1 mt-1 placeholder:text-primary-foreground text-primary-foreground"
               placeholder="Describe your health issue or ask a question..."
               disabled={isLoading}
             />
             <Button
               type="submit"
-              className="bg-lime-900 hover:bg-lime-950 w-auto rounded-xl"
+              className="bg-primary hover:bg-primary/90 w-auto rounded-xl"
               disabled={isLoading}
             >
               {isLoading ? 'Processing...' : 'Submit'}
