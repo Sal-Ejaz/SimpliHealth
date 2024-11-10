@@ -51,10 +51,7 @@ ${data.clinicalTrials.map((trial) => `- ${trial.protocolSection.identificationMo
 
   return (
     <div className="flex flex-col h-screen">
-      <Head>
-        <title>SimpliHealth</title>
-      </Head>
-      <ChatDisplay messages={messages} onSubmit={handleSubmit} />
+        <ChatDisplay messages={messages} onSubmit={handleSubmit} />
     </div>
   )
 }
