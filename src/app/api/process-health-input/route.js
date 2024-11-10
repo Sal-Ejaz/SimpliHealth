@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai'
 
 // Initialize Gemini AI with the API key from environment variables
 // This allows us to use Gemini's capabilities throughout our application
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY)
+const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY)
 
 /* We receive the user's input as a string in the POST request.
  We pass this string to the `processHealthInput` function, which uses Gemini to extract the required information.
