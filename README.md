@@ -1,5 +1,4 @@
-![youtube](https://youtu.be/TN0u1AqEEb4)
-
+[![Watch the video](https://img.youtube.com/vi/TN0u1AqEEb4/maxresdefault.jpg)](https://youtu.be/TN0u1AqEEb4)
 # The Problem
 When it comes to complex medical terminologies and studies, many people have difficulties understanding the nuances of clinical trials and what their takeaways should be. Moreover, the current expert search functionality on Clinicaltrials.gov can prove to have an acute learning curve for those that are uninitiated to the technology. What if a patient wants to view studies that from a specific region? What if they are looking to explore certain symptoms rather than a pre-existing condition? What if the user wanted to receive accurate results and data from scientific literature?
 # Our Solution
